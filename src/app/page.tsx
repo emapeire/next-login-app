@@ -1,9 +1,12 @@
-import { LoginForm } from '@/components/login'
+import { Section } from '@/components/ui/section'
+import { Hero } from '@/components/hero'
 
 export default function Home() {
   return (
-    <main className='flex min-h-screen flex-col items-center justify-center p-24'>
-      <LoginForm />
-    </main>
+    <div className='flex flex-col flex-1'>
+      <Section>
+        <Hero />
+      </Section>
+    </div>
   )
 }
