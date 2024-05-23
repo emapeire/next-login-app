@@ -1,5 +1,12 @@
+'use client'
+
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { navLinks } from '@/constants'
+
 export function Footer() {
   const year = new Date().getFullYear()
+  const pathname = usePathname()
 
   return (
     <footer className='flex justify-center items-center w-full mx-auto md:max-w-3xl'>
@@ -18,6 +25,32 @@ export function Footer() {
           <span className='ms-2 me-2'>—</span>
           All rights reserved.
         </p>
+
+        <div className='flex flex-wrap items-center pt-2 md:pt-0'>
+          {navLinks.map((link, index) => (
+            <div key={link.label}>
+              {pathname === link.url ? (
+                <span
+                  aria-label={link.label}
+                  className='opacity-50 cursor-default'
+                >
+                  {link.title}
+                </span>
+              ) : (
+                <Link
+                  aria-label={link.label}
+                  href={link.url}
+                  className='hover:underline hover:underline-offset-4'
+                >
+                  {link.title}
+                </Link>
+              )}
+              {index < navLinks.length - 1 && (
+                <span className='mx-2 cursor-default'>|</span>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </footer>
   )

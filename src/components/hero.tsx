@@ -4,7 +4,7 @@ import { Button } from './ui/button'
 export function Hero() {
   return (
     <>
-      <h1 className='font-mono text-4xl h-20 font-bold animate-pulse'>
+      <h1 className='font-mono text-9xl mb-16 font-bold animate-pulse'>
         Hello, world!
       </h1>
 

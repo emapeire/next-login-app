@@ -34,11 +34,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Header />
           <main className='flex flex-col items-center justify-center min-h-screen pt-24 pb-8 px-4'>
+            <Header />
             {children}
+            <Footer />
           </main>
-          <Footer />
         </ThemeProvider>
       </body>
     </html>
